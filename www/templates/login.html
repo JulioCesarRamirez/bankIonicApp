@@ -1,0 +1,39 @@
+<ion-view view-title="Login" ng-controller="loginCtrl as vm" name="login-view">
+    <ion-header-bar align-title="center" class="bar-calm">
+        <div class="buttons">
+            <a class="button icon ion-ios-home" href="#/home"></a>
+        </div>
+        <h1 class="title">Login</h1>
+    </ion-header-bar>
+    <ion-content class="padding">
+        <div class="row">
+            <div class="col">
+                <img class="banner-image" src="../img/logo.jpg" alt="">
+            </div>
+        </div>
+        <form name="vm.form" novalidate ng-submit="vm.login()">
+            <div class="list list-inset">
+                <label class="item item-input" ng-class="{ 'mbsc-err': vm.form.email.$invalid && vm.form.$submitted}">
+                    <input name="email" type="email" placeholder="Username" required ng-model="vm.data.username">
+                </label>
+                <div class="item mbsc-err-msg" ng-show="vm.form.email.$error.required && vm.form.$submitted">
+                    <span>Tell us your email</span>
+                </div>
+                <label class="item item-input" ng-class="{ 'mbsc-err': vm.form.password.$invalid && vm.form.$submitted}">
+                    <input name="password" type="password" placeholder="Password" required ng-model="vm.data.password">
+                </label>
+                <div class="item mbsc-err-msg" ng-show="vm.form.password.$error.required && vm.form.$submitted">
+                    <span>Choose a password</span>
+                </div>
+            </div>
+            <button class="button button-block button-calm" type="submit">Login</button>
+            <p style="text-align: center;">Or</p>
+            <div class="button-bar">
+                <a class="button button-clear button-positive" href="#/singUp">Sing Up</a>
+            </div>
+        </form>
+    </ion-content>
+    <ion-footer-bar class="bar-calm">
+        <h6 class="foo-title">This is a quis app created with Ionic V1 and Angularjs</h6>
+    </ion-footer-bar>
+</ion-view>

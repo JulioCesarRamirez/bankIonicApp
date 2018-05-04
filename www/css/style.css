@@ -1,0 +1,14 @@
+.banner-image {
+    width: 100%;
+    height: auto;
+}
+
+.mbsc-err-msg {
+    color: #D8000C;
+    background-color: #FFD2D2;
+}
+
+.foo-title {
+    font-size: 11px;
+    color: white;
+}
