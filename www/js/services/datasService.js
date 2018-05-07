@@ -3,21 +3,24 @@ angular
     .service('datasServices', dataServices);
 
 function dataServices($q, $http, $localStorage) {
+
+    const url = 'http://10.230.43.10:3001/';
+
     function getCards() {
 
         const deferred = $q.defer();
         const promise = deferred.promise;
-        const url = 'http://10.230.43.10:3001/'
+        
 
         let headers = {
             'Content-Type': 'application/json',
             'x-access-token': $localStorage.token
         };
 
-        $http.get(url + 'api/accounts', { headers: headers }).then(response => {
+        $http.get(`${url} api/accounts`, { headers: headers }).then(function(response) {
 
             deferred.resolve(response.data.response);
-        }, err => {
+        }, function(err) {
             if (err.data) {
                 const data = null;
                 deferred.resolve(data);
@@ -39,14 +42,13 @@ function dataServices($q, $http, $localStorage) {
     function cardType() {
         const deferred = $q.defer();
         const promise = deferred.promise;
-        const url = 'http://10.230.43.10:3001/'
 
         let headers = {
             'Content-Type': 'application/json',
         }
-        $http.get(url + 'api/catalogs/cards', { headers: headers }).then(response => {
+        $http.get(`${url} 'api/catalogs/cards`, { headers: headers }).then(function(response)  {
             deferred.resolve(response.data.response);
-        }, err => {
+        }, function(err) {
             console.log(err);
             deferred.reject(err);
         });
@@ -64,7 +66,6 @@ function dataServices($q, $http, $localStorage) {
     function requestCard(card) {
         const deferred = $q.defer();
         const promise = deferred.promise;
-        const url = 'http://10.230.43.10:3001/'
 
         let headers = {
             'Content-Type': 'application/json',
@@ -75,10 +76,10 @@ function dataServices($q, $http, $localStorage) {
             "type": card.type,
             "name": card.name
         }
-        $http.post(`${url}api/accounts`, body, { headers }).then(response => {
+        $http.post(`${url}api/accounts`, body, { headers }).then(function(response) {
             console.log(response.data);
             deferred.resolve(response.data);
-        }, err => {
+        },function (err) {
             console.log(err);
             deferred.reject(err);
         });

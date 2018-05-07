@@ -16,13 +16,13 @@ angular
             };
             $ionicLoading.show({ template: 'Loading...'});
 
-            $http.post(url + 'api/auth/user/authenticate', body).then(response => {
+            $http.post(`${url}api/auth/user/authenticate`, body).then(function(response) {
                 $localStorage.token = response.data.token;
                 tokenPayload = jwtHelper.decodeToken(response.data.token);
                 $localStorage.user = tokenPayload;
                 $ionicLoading.hide();
                 deferred.resolve('login success');
-            }, err => {
+            }, function(err) {
                 $ionicLoading.hide();
                 console.log(err);
                 deferred.reject(err);
@@ -48,10 +48,10 @@ angular
                 "lastname": user.mail,
                 "password": user.password
             }
-            $http.post(url + 'api/users', body).then(response => {
+            $http.post(`${url}api/users`, body).then(function(response) {
                 $localStorage.token = response.data.token;
                 deferred.resolve('Sing up success');
-            }, err => {
+            }, function(err) {
                 console.log(err);
                 deferred.reject(err);
             });
