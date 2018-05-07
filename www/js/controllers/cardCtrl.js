@@ -1,18 +1,20 @@
-angular.module('starter').controller('cardCtrl', ['$scope', 'datasServices', '$state', '$ionicPopup', cardCtrl])
+angular
+    .module('starter').controller('cardCtrl', cardCtrl)
 
+cardCtrl.$inject = ['$scope', 'datasServices', '$state', '$ionicPopup'];
 
 function cardCtrl($scope, datasServices, $state, $ionicPopup) {
-   
+
     var vm = this;
     vm.card = null;
     vm.cards = [];
-    vm.show = true; 
+    vm.show = true;
     datasServices.cardType().then(data => {
         vm.cards = data.type_cards;
-    }, err =>{
+    }, err => {
         console.log(err);
     });
-    vm.requestCard = function(){
+    vm.requestCard = function () {
         datasServices.requestCard(vm.card).then(data => {
             var alertPopup = $ionicPopup.alert({
                 title: 'Request Success',

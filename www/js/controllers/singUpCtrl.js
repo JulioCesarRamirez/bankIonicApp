@@ -1,5 +1,8 @@
-angular.module('starter').controller('singUpCtrl', ['LoginService', '$ionicPopup', '$state', singUpCtrl])
+angular
+    .module('starter')
+    .controller('singUpCtrl', singUpCtrl);
 
+singUpCtrl.$inject = ['LoginService', '$ionicPopup', '$state'];
 
 function singUpCtrl(LoginService, $ionicPopup, $state) {
 

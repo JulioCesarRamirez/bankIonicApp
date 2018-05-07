@@ -1,4 +1,4 @@
-<ion-view view-title="Login" ng-controller="loginCtrl as vm" name="login-view">
+<ion-view view-title="Login" name="login-view">
     <ion-header-bar align-title="center" class="bar-calm">
         <div class="buttons">
             <a class="button icon ion-ios-home" href="#/home"></a>
@@ -11,18 +11,18 @@
                 <img class="banner-image" src="../img/logo.jpg" alt="">
             </div>
         </div>
-        <form name="vm.form" novalidate ng-submit="vm.login()">
+        <form name="vl.form" novalidate ng-submit="vl.login()">
             <div class="list list-inset">
-                <label class="item item-input" ng-class="{ 'mbsc-err': vm.form.email.$invalid && vm.form.$submitted}">
-                    <input name="email" type="email" placeholder="Username" required ng-model="vm.data.username">
+                <label class="item item-input" ng-class="{ 'mbsc-err': vl.form.email.$invalid && vl.form.$submitted}">
+                    <input name="email" type="email" placeholder="Username" required ng-model="vl.data.username">
                 </label>
-                <div class="item mbsc-err-msg" ng-show="vm.form.email.$error.required && vm.form.$submitted">
+                <div class="item mbsc-err-msg" ng-show="vl.form.email.$error.required && vl.form.$submitted">
                     <span>Tell us your email</span>
                 </div>
-                <label class="item item-input" ng-class="{ 'mbsc-err': vm.form.password.$invalid && vm.form.$submitted}">
-                    <input name="password" type="password" placeholder="Password" required ng-model="vm.data.password">
+                <label class="item item-input" ng-class="{ 'mbsc-err': vl.form.password.$invalid && vl.form.$submitted}">
+                    <input name="password" type="password" placeholder="Password" required ng-model="vl.data.password">
                 </label>
-                <div class="item mbsc-err-msg" ng-show="vm.form.password.$error.required && vm.form.$submitted">
+                <div class="item mbsc-err-msg" ng-show="vl.form.password.$error.required && vl.form.$submitted">
                     <span>Choose a password</span>
                 </div>
             </div>

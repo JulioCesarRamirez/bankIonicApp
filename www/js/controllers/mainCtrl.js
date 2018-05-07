@@ -1,4 +1,8 @@
-angular.module('starter').controller('mainCtrl', ['$scope', 'LoginService', '$state', '$localStorage', '$timeout', '$ionicLoading', mainCtrl]);
+angular
+    .module('starter')
+    .controller('mainCtrl', mainCtrl);
+
+mainCtrl.$inject = ['$scope', 'LoginService', '$state', '$localStorage', '$timeout', '$ionicLoading'];
 
 function mainCtrl($scope, LoginService, $state, $localStorage, $timeout, $ionicLoading) {
     var vm = this;

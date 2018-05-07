@@ -1,22 +1,22 @@
-<ion-view view-title="Request Card" ng-controller="cardCtrl as vm">
+<ion-view view-title="Request Card">
   <ion-content class="padding">
     <h4>Request a new card</h4>
     <div class="card padding">
-      <h3 ng-hide="vm.show">We will contact you, thanks</h3>
-      <div ng-show="vm.show">
+      <h3 ng-hide="vca.show">We will contact you, thanks</h3>
+      <div ng-show="vca.show">
         <div class="list">
           <label class="item item-input item-select">
             <div class="input-label">
               Choose a card
             </div>
-            <select ng-model="vm.card" 
-            ng-options="card.name for card in vm.cards track by card.id"
-            ng-init="vm.card = card[0]">
+            <select ng-model="vca.card" 
+            ng-options="card.name for card in vca.cards track by card.id"
+            ng-init="vca.card = card[0]">
                 
             </select>
           </label>
         </div>
-        <button class="button button-full button-positive disable"  ng-click="vm.requestCard()">
+        <button class="button button-full button-positive disable"  ng-click="vca.requestCard()">
           Request Card
         </button>
       </div>

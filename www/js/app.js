@@ -24,19 +24,22 @@ angular.module('starter', ['ionic', 'chart.js', 'ngStorage', 'angular-jwt'])
       .state('app', {
         url: '/app',
         templateUrl: 'templates/menu.html',
-        controller: 'mainCtrl'
+        controller: 'mainCtrl',
+        controllerAs: 'vm'
       })
       .state('home', {
         url: '/home',
         templateUrl: 'templates/principal.html',
-        controller: 'homeCtrl'
+        controller: 'homeCtrl',
+        controllerAs: 'vh'
       })
       .state('app.charts', {
         url: '/charts',
         views: {
           'menuContent': {
             templateUrl: 'templates/charts.html',
-            controller: 'chartsCtrl'
+            controller: 'chartsCtrl',
+            controllerAs: 'vc'
           }
         }
       })
@@ -48,7 +51,8 @@ angular.module('starter', ['ionic', 'chart.js', 'ngStorage', 'angular-jwt'])
         views: {
           'menuContent': {
             templateUrl: 'templates/details.html',
-            controller: 'detailsCtrl'
+            controller: 'detailsCtrl',
+            controllerAs: 'vd'
 
           }
         }
@@ -58,21 +62,22 @@ angular.module('starter', ['ionic', 'chart.js', 'ngStorage', 'angular-jwt'])
         views: {
           'menuContent': {
             templateUrl: 'templates/card.html',
-            controller: 'cardCtrl'
+            controller: 'cardCtrl',
+            controllerAs: 'vca'
           }
         }
       })
       .state('singUp', {
         url: '/singUp',
         templateUrl: 'templates/SingUp.html',
-        controller: 'singUpCtrl'
-
+        controller: 'singUpCtrl',
+        controllerAs: 'vs'
       })
       .state('login', {
         url: '/login',
         templateUrl: 'templates/login.html',
-        controller: 'loginCtrl'
-
+        controller: 'loginCtrl',
+        controllerAs: 'vl'
       });
     // if none of the above states are matched, use this as the fallback
     $urlRouterProvider.otherwise('/home');

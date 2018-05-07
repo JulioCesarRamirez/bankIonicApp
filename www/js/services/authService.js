@@ -1,5 +1,8 @@
-angular.module('starter')
-    .service('LoginService', function ($q, $localStorage, $http, jwtHelper, $ionicLoading) {
+angular
+    .module('starter')
+    .service('LoginService', LoginService);
+
+    function LoginService($q, $localStorage, $http, jwtHelper, $ionicLoading) {
 
         const url = 'http://10.230.43.10:3001/'
 
@@ -68,4 +71,4 @@ angular.module('starter')
             loginUser: loginUser,
             singUp: singUp
         }
-    })
+    }

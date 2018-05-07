@@ -1,4 +1,4 @@
-<ion-view view-title="sing Up" ng-controller="singUpCtrl as vm" name="login-view">
+<ion-view view-title="sing Up" name="login-view">
     <ion-header-bar align-title="center" class="bar-calm">
         <div class="buttons">
             <a class="button icon ion-ios-home" href="#/home"></a>
@@ -11,34 +11,34 @@
                 <img class="banner-image" src="../img/logo.jpg" alt="">
             </div>
         </div>
-        <form name="vm.form" novalidate ng-submit="vm.singUp()">
+        <form name="vs.form" novalidate ng-submit="vs.singUp()">
             <div class="list">
                 <label class="item item-input item-stacked-label">
                     <span class="input-label">First Name</span>
-                    <input required name="userName" type="text" placeholder="User Name" ng-model="vm.data.username">
+                    <input required name="userName" type="text" placeholder="User Name" ng-model="vs.data.username">
                 </label>
-                <div class="item mbsc-err-msg" ng-show="vm.form.userName.$error.required && vm.form.$submitted">
+                <div class="item mbsc-err-msg" ng-show="vs.form.userName.$error.required && vs.form.$submitted">
                     <span>Tell us your name</span>
                 </div>
                 <label class="item item-input item-stacked-label">
                     <span class="input-label">Last Name</span>
-                    <input required name="userlastname" type="text" placeholder="Last Name" ng-model="vm.data.userlastname">
+                    <input required name="userlastname" type="text" placeholder="Last Name" ng-model="vs.data.userlastname">
                 </label>
-                <div class="item mbsc-err-msg" ng-show="vm.form.userlastname.$error.required && vm.form.$submitted">
+                <div class="item mbsc-err-msg" ng-show="vs.form.userlastname.$error.required && vs.form.$submitted">
                     <span>Tell us your last name</span>
                 </div>
                 <label class="item item-input item-stacked-label">
                     <span class="input-label">Email</span>
-                    <input required name="mail" type="email" placeholder="email" ng-model="vm.data.mail">
+                    <input required name="mail" type="email" placeholder="email" ng-model="vs.data.mail">
                 </label>
-                <div class="item mbsc-err-msg" ng-show="vm.form.mail.$error.required && vm.form.$submitted">
+                <div class="item mbsc-err-msg" ng-show="vs.form.mail.$error.required && vs.form.$submitted">
                     <span>Tell us your email</span>
                 </div>
                 <label class="item item-input item-stacked-label">
                     <span class="input-label">Password</span>
-                    <input required name="password" type="password" placeholder="Password" ng-model="vm.data.password">
+                    <input required name="password" type="password" placeholder="Password" ng-model="vs.data.password">
                 </label>
-                <div class="item mbsc-err-msg" ng-show="vm.form.password.$error.required && vm.form.$submitted">
+                <div class="item mbsc-err-msg" ng-show="vs.form.password.$error.required && vs.form.$submitted">
                     <span>Tell us your password</span>
                 </div>
             </div>

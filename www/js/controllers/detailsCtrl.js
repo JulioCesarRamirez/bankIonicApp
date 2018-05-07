@@ -1,4 +1,8 @@
-angular.module('starter').controller('detailsCtrl', ['$stateParams', '$state', detailsCtrl])
+angular
+    .module('starter')
+    .controller('detailsCtrl', detailsCtrl);
+
+detailsCtrl.$inject = ['$stateParams', '$state']
 
 
 function detailsCtrl($stateParams, $state) {

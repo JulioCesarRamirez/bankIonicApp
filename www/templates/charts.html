@@ -1,18 +1,18 @@
-<ion-view view-title="Accounts" ng-controller="chartsCtrl as vm">
+<ion-view view-title="Accounts">
   <ion-header-bar align-title="center" class="bar-calm ">
     <h1 class="title">Charts</h1>
   </ion-header-bar>
   <ion-content class="padding">
     <h3>Accounts resume</h3>
-    <div class="card padding" ng-if="!vm.cardss">
+    <div class="card padding" ng-if="!vc.cardss">
       <button class="button button-block button-calm" ng-click="">Request a new card</button>
     </div>
-    <div class="card" ng-repeat="chart in vm.cardss" ng-if="vm.cardss">
-      <div class="item item-text-wrap" ng-if="vm.cardss">
-        <button ng-click="vm.details(chart)" class="button button-full button-calm">
+    <div class="card" ng-repeat="chart in vc.cardss" ng-if="vc.cardss">
+      <div class="item item-text-wrap" ng-if="vc.cardss">
+        <button ng-click="vc.details(chart)" class="button button-full button-calm">
           {{chart.title || details}}
         </button>
-        <canvas id="chart.id" class="chart chart-pie" chart-data="chart.datas" chart-labels="chart.labels" chart-colours="vm.colors">
+        <canvas id="chart.id" class="chart chart-pie" chart-data="chart.datas" chart-labels="chart.labels" chart-colours="vc.colors">
         </canvas>
       </div>
     </div>

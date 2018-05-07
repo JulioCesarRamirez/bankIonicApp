@@ -1,4 +1,8 @@
-angular.module('starter').controller('loginCtrl', ['$scope', 'LoginService', '$ionicPopup', '$state', loginCtrl]);
+angular
+    .module('starter')
+    .controller('loginCtrl', loginCtrl);
+
+loginCtrl.$inject = ['$scope', 'LoginService', '$ionicPopup', '$state'];
 
 function loginCtrl($scope, LoginService, $ionicPopup, $state) {
     var vm = this;

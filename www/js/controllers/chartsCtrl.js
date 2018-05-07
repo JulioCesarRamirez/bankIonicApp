@@ -1,4 +1,8 @@
-angular.module('starter').controller('chartsCtrl', ['$scope', 'datasServices', '$state', '$localStorage', chartsCtrl]);
+angular
+    .module('starter')
+    .controller('chartsCtrl', chartsCtrl);
+
+chartsCtrl.$inject = ['$scope', 'datasServices', '$state', '$localStorage'];
 
 function chartsCtrl($scope, datasServices, $state, $localStorage) {
     var vm = this;
