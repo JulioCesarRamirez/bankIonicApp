@@ -3,7 +3,7 @@
     <h1 class="title">Charts</h1>
   </ion-header-bar>
   <ion-content class="padding">
-    <h3>Accounts resume</h3>
+    <h3>Welcome {{vc.user.firstname}}</h3>
     <div class="card padding" ng-if="!vc.cardss">
       <button class="button button-block button-calm" ng-click="">Request a new card</button>
     </div>
@@ -12,7 +12,7 @@
         <button ng-click="vc.details(chart)" class="button button-full button-calm">
           {{chart.title || details}}
         </button>
-        <canvas id="chart.id" class="chart chart-pie" chart-data="chart.datas" chart-labels="chart.labels" chart-colours="vc.colors">
+        <canvas id="chart.id" class="chart chart-pie" chart-data="chart.datas" chart-labels="chart.labels">
         </canvas>
       </div>
     </div>

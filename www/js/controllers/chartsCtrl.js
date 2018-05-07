@@ -7,9 +7,7 @@ chartsCtrl.$inject = ['$scope', 'datasServices', '$state', '$localStorage'];
 function chartsCtrl($scope, datasServices, $state, $localStorage) {
     var vm = this;
     vm.cardss = [];
-    vm.colors = ["rgba(255,0,0,0.3)",
-        "rgba(0,255,0,0.3)",
-        "rgba(0,0,255,0.3)"]
+    vm.user = $localStorage.user;
     datasServices.getCards().then((data = []) => {
         if (Array.isArray(data)) {
             data.forEach(element => {

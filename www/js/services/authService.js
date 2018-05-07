@@ -68,7 +68,7 @@ angular
 
 
         return {
-            loginUser: loginUser,
-            singUp: singUp
+            loginUser,
+            singUp
         }
     }
