@@ -17,7 +17,7 @@ function dataServices($q, $http, $localStorage) {
             'x-access-token': $localStorage.token
         };
 
-        $http.get(`${url} api/accounts`, { headers: headers }).then(function(response) {
+        $http.get(`${url}api/accounts`, { headers: headers }).then(function(response) {
 
             deferred.resolve(response.data.response);
         }, function(err) {
